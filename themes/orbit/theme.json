@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "id": "orbit",
+  "name": "Night Orbit",
+  "version": "1.0.0",
+  "tagline": "braille starfield",
+  "description": "A ringed planet turns while a moon circles it, stars drift in layers and the odd meteor cuts across, all in braille dots.",
+  "author": "diorama contributors",
+  "license": "MIT",
+  "scheme": "dark",
+  "scene": "scene.js",
+  "fps": 30,
+  "resolution": 1,
+  "palette": {
+    "light": {
+      "base": "#ebeaf0",
+      "glass": "rgb(255 255 255 / 0.55)",
+      "glassStrong": "rgb(255 255 255 / 0.82)",
+      "blur": "12px",
+      "accent": "#5a4a9a"
+    },
+    "dark": {
+      "base": "#070a18",
+      "glass": "rgb(10 14 32 / 0.55)",
+      "glassStrong": "rgb(10 14 32 / 0.85)",
+      "blur": "12px",
+      "accent": "#9db4ff"
+    }
+  },
+  "options": {
+    "mark": "braille",
+    "density": 0.05,
+    "speed": 1
+  },
+  "terminal": {
+    "windowsTerminal": "terminal/windows-terminal.hlsl",
+    "ghostty": "terminal/ghostty.glsl"
+  }
+}

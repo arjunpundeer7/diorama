@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "id": "dunes",
+  "name": "Dune Drift",
+  "version": "1.0.0",
+  "tagline": "1-bit dither",
+  "description": "Desert ridges roll past at different speeds under a low sun, with wind-blown sand and a few birds. Two inks and one accent colour.",
+  "author": "diorama contributors",
+  "license": "MIT",
+  "scheme": "light",
+  "scene": "scene.js",
+  "fps": 24,
+  "resolution": 1,
+  "palette": {
+    "light": {
+      "base": "#f1ebdd",
+      "glass": "rgb(241 235 221 / 0.62)",
+      "glassStrong": "rgb(248 244 236 / 0.86)",
+      "blur": "10px",
+      "accent": "#ff5a1f"
+    },
+    "dark": {
+      "base": "#100f0d",
+      "glass": "rgb(16 15 13 / 0.6)",
+      "glassStrong": "rgb(16 15 13 / 0.86)",
+      "blur": "10px",
+      "accent": "#ffb347"
+    }
+  },
+  "options": {
+    "mark": "dither",
+    "birds": 3,
+    "speed": 1
+  },
+  "terminal": {
+    "windowsTerminal": "terminal/windows-terminal.hlsl",
+    "ghostty": "terminal/ghostty.glsl"
+  }
+}

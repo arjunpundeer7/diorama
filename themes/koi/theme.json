@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "id": "koi",
+  "name": "Koi Pond",
+  "version": "1.0.0",
+  "tagline": "halftone pond",
+  "description": "Koi wind between drifting lily pads while ripples spread across the water, in halftone dots that swell and shrink with the movement.",
+  "author": "diorama contributors",
+  "license": "MIT",
+  "scheme": "dark",
+  "scene": "scene.js",
+  "fps": 30,
+  "resolution": 1,
+  "palette": {
+    "light": {
+      "base": "#e5eee8",
+      "glass": "rgb(255 255 255 / 0.55)",
+      "glassStrong": "rgb(255 255 255 / 0.82)",
+      "blur": "12px",
+      "accent": "#ff5a24"
+    },
+    "dark": {
+      "base": "#08150f",
+      "glass": "rgb(6 18 14 / 0.55)",
+      "glassStrong": "rgb(6 18 14 / 0.85)",
+      "blur": "12px",
+      "accent": "#ff8a3d"
+    }
+  },
+  "options": {
+    "mark": "halftone",
+    "koi": 5,
+    "pads": 6,
+    "speed": 1
+  },
+  "terminal": {
+    "windowsTerminal": "terminal/windows-terminal.hlsl",
+    "ghostty": "terminal/ghostty.glsl"
+  }
+}

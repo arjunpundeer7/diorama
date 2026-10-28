@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-scheme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>diorama preview</title>
+    <link rel="stylesheet" href="preview/demo.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="bar">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="crumbs">
+          <span id="title">Lagoon chat theme</span>
+          <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" /></svg>
+        </div>
+        <div class="controls">
+          <label>Theme <select id="theme"></select></label>
+          <label>Mark <select id="mark"></select></label>
+          <label>Mode <select id="scheme"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+          <a class="gallery-link" href="gallery.html">All themes</a>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <p class="label">Pinned <svg viewBox="0 0 16 16"><path d="M5 6l3 3 3-3" /></svg></p>
+        <ul class="nav">
+          <li><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2" /><path d="M3 7h10" /></svg>Design studio</li>
+          <li><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2" /><path d="M3 7h10" /></svg>Landing</li>
+          <li><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2" /><path d="M3 7h10" /></svg>Mobile app</li>
+          <li><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2" /><path d="M3 7h10" /></svg>Brand kit</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Motion video #17</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Build in public #3</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Pricing page</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Email campaign</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Season 2 rebuild</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Text cleaner extension</li>
+          <li><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg>Onboarding flow</li>
+          <li class="active"><svg viewBox="0 0 16 16"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" /></svg><span id="nav-theme">Lagoon chat theme</span></li>
+        </ul>
+        <p class="label">Studio <svg viewBox="0 0 16 16"><path d="M5 6l3 3 3-3" /></svg></p>
+        <ul class="nav">
+          <li><svg viewBox="0 0 16 16"><path d="M3 12l3-1 6-6-2-2-6 6z" /></svg>Sketches</li>
+        </ul>
+        <div class="account"><i></i>Studio <span>Max</span></div>
+      </aside>
+
+      <main class="chat">
+        <div class="thread">
+          <ul class="bullets">
+            <li><b>Wireframe.</b> Vector lines only, like Asteroids or Battlezone.</li>
+            <li><b>Plotter art.</b> One continuous line or hatching, like a pen plotter.</li>
+            <li><b>Mosaic / tile.</b> Roman mosaic, Lego mosaic, emoji instead of glyphs.</li>
+          </ul>
+
+          <div class="msg user">which of these work best on X?</div>
+
+          <div class="msg">
+            <p class="strong">What's working on X right now</p>
+            <ol>
+              <li><b>Dithering 1-bit</b> with motion. Very stylish with one accent colour.</li>
+              <li><b>Braille animations.</b> Read like ASCII, with far more detail.</li>
+              <li><b>Teletext.</b> Nostalgia plus a bright palette.</li>
+              <li><b>Halftone motion.</b> Dots that breathe with the movement.</li>
+            </ol>
+            <p>I can remake the theme in any of these: the renderer already computes a colour per cell, so only the mark changes.</p>
+          </div>
+
+          <div class="msg user" id="ask">make my chat Honu Lagoon</div>
+
+          <div class="msg">
+            <p>Here's a theme for this chat. It swaps the background for a live animation and turns the panels into frosted glass.</p>
+            <div class="card">
+              <div class="thumb"><img id="thumb" alt="" /></div>
+              <div class="card-body">
+                <p class="card-title" id="card-title">Honu Lagoon</p>
+                <p class="card-meta" id="card-meta">Chat theme · ASCII lagoon · 30 fps</p>
+                <div class="card-actions">
+                  <span class="applied"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" /></svg>Applied</span>
+                  <span class="ghost">Preview</span>
+                </div>
+              </div>
+            </div>
+            <p>Applied. The background now moves under every chat, and the text sits on frosted glass so it stays easy to read.</p>
+          </div>
+        </div>
+
+        <div class="composer">
+          <span class="plus">+</span>
+          <span class="placeholder">Type / for commands</span>
+          <svg viewBox="0 0 16 16"><rect x="6" y="2" width="4" height="8" rx="2" /><path d="M4 8a4 4 0 008 0M8 12v2" /></svg>
+        </div>
+        <div class="status"><span>Auto</span><span>model · high</span></div>
+      </main>
+    </div>
+    <script src="runtime.js"></script>
+    <script src="preview/demo.js"></script>
+  </body>
+</html>
