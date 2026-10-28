@@ -1,7 +1,7 @@
 ## Install
 
 ```sh
-npm install -g github:arjunpundeer7/diorama
+npm install -g github:arjunpundeer7/diorama --install-links
 diorama preview
 ```
 

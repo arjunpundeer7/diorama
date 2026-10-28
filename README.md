@@ -29,8 +29,16 @@ Any theme can be drawn in any of six styles: `ascii`, `braille`, `halftone`, `di
 You need [Node.js](https://nodejs.org) 22 or newer.
 
 ```sh
-npx github:arjunpundeer7/diorama preview      # try it without installing
-npm install -g github:arjunpundeer7/diorama   # install the diorama command
+npx github:arjunpundeer7/diorama preview                     # try it without installing
+npm install -g github:arjunpundeer7/diorama --install-links  # install the diorama command
+```
+
+Keep `--install-links`. Without it, npm links a global install from GitHub to a temporary
+folder it later cleans up, and the command stops working with "Cannot find module". Run the
+same command again to update. To pin a release instead:
+
+```sh
+npm install -g https://github.com/arjunpundeer7/diorama/archive/refs/tags/v0.1.0.tar.gz
 ```
 
 The browser extension and the editor extension are also on the
