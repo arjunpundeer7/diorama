@@ -23,7 +23,9 @@ test('a skin that extends another inherits its slots, vars and match', () => {
   const cursor = catalog.skin('cursor');
   assert.equal(cursor.id, 'cursor');
   assert.deepEqual(cursor.slots.slice(0, vscode.slots.length), vscode.slots);
-  assert.deepEqual(cursor.vars.values, vscode.vars.values);
+  for (const [name, value] of Object.entries(vscode.vars.values)) assert.equal(cursor.vars.values[name], value, name);
+  assert.ok(cursor.vars.values['--glass-sidebar-surface-background'], 'adds its own variables');
+  assert.ok(cursor.vars.scope.includes('.monaco-workbench') && cursor.vars.scope.includes('[data-component="root"]'));
   assert.deepEqual(cursor.match, vscode.match);
 });
 
