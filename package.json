@@ -1,0 +1,56 @@
+{
+  "name": "diorama",
+  "version": "0.1.0",
+  "description": "Living, animated backgrounds for Cursor, VS Code, the Codex app, claude.ai, chatgpt.com and your terminal.",
+  "license": "MIT",
+  "author": "Arjun Pundeer (https://github.com/arjunpundeer7)",
+  "homepage": "https://arjunpundeer7.github.io/diorama/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunpundeer7/diorama.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arjunpundeer7/diorama/issues"
+  },
+  "bin": {
+    "diorama": "bin/diorama.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "runtime",
+    "preview",
+    "extension",
+    "vscode",
+    "themes",
+    "skins",
+    "schemas"
+  ],
+  "scripts": {
+    "diorama": "node bin/diorama.js",
+    "build": "node bin/diorama.js build all --out dist",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "theme",
+    "vscode",
+    "cursor",
+    "codex",
+    "claude",
+    "chatgpt",
+    "ascii",
+    "animation",
+    "windows-terminal",
+    "ghostty",
+    "live-wallpaper",
+    "braille",
+    "halftone",
+    "dither"
+  ]
+}

@@ -1,0 +1,154 @@
+:root {
+  --bg: #ffffff;
+  --fg: #16191d;
+  --muted: #69707a;
+  --line: #e3e6ea;
+  --field: #f4f5f7;
+  --ok: #1d7f4e;
+  --warn: #9a6700;
+  --bad: #c0362c;
+  --accent: #11808a;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15181c;
+    --fg: #e7eaee;
+    --muted: #949ba5;
+    --line: #2a2f36;
+    --field: #1e2228;
+    --ok: #5fcf95;
+    --warn: #e2b54a;
+    --bad: #ff7b72;
+    --accent: #4fd1c5;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  padding: 14px 16px 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+section + section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.controls {
+  display: grid;
+  gap: 6px;
+}
+
+.controls > label:not(.check) {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--fg);
+  font: inherit;
+}
+
+.check,
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  accent-color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+#preview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+#description {
+  margin: 0 0 4px;
+  font-size: 12px;
+}
+
+#summary {
+  margin: 0 0 6px;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+li.ok {
+  color: var(--ok);
+}
+
+li.warn {
+  color: var(--warn);
+}
+
+li.bad {
+  color: var(--bad);
+}
+
+button {
+  margin: 10px 0 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--fg);
+  font: inherit;
+  cursor: pointer;
+}
+
+code {
+  font-size: 11px;
+  word-break: break-all;
+  cursor: copy;
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/skin.schema.json",
+  "id": "codex-desktop",
+  "name": "Codex desktop app",
+  "description": "The Codex desktop app's main window. Uses Codex's data-* attributes, which are steadier than its generated class names.",
+  "match": {
+    "urls": ["app://-/index.html*"],
+    "exclude": ["*initialRoute=*"]
+  },
+  "scheme": {
+    "dark": ["html[data-theme=\"dark\"]"],
+    "light": ["html[data-theme=\"light\"]"]
+  },
+  "slots": [
+    { "name": "app", "role": "clear", "required": true, "selectors": ["#root"] },
+    { "name": "main", "role": "glass", "required": true, "selectors": ["main[data-app-shell-main-surface]"] },
+    { "name": "composer", "role": "strong", "selectors": ["[data-composer-body]"] }
+  ],
+  "status": "draft",
+  "verified": [{ "app": "Codex (Windows)", "version": "26.1021.3705.0", "date": "2026-10-28" }]
+}

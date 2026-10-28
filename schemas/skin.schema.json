@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "diorama skin",
+  "description": "skins/<id>.json: how one app's interface is made see-through. See docs/skins.md.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "extends": { "type": "string", "description": "Another skin's id. Its slots come first; vars merge by name." },
+    "match": {
+      "type": "object",
+      "required": ["urls"],
+      "properties": {
+        "urls": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Page URLs this skin applies to. * matches anything."
+        },
+        "exclude": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "URLs to skip even if they match, such as transparent overlay windows."
+        }
+      },
+      "additionalProperties": false
+    },
+    "scheme": {
+      "type": "object",
+      "description": "How to tell the app's light and dark modes apart. Without a match, the app's text colour decides.",
+      "properties": {
+        "dark": { "type": "array", "items": { "type": "string" } },
+        "light": { "type": "array", "items": { "type": "string" } },
+        "probe": { "type": "string", "description": "Element whose text colour is read. Default: body." }
+      },
+      "additionalProperties": false
+    },
+    "vars": {
+      "type": "object",
+      "required": ["values"],
+      "properties": {
+        "scope": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Elements that define the app's variables. :root means <html>."
+        },
+        "values": {
+          "type": "object",
+          "propertyNames": { "pattern": "^--" },
+          "additionalProperties": { "type": "string" },
+          "description": "CSS custom properties to override. Values can use var(--diorama-glass) and the other palette variables."
+        }
+      },
+      "additionalProperties": false
+    },
+    "slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "selectors"],
+        "properties": {
+          "name": { "type": "string" },
+          "role": {
+            "enum": ["clear", "glass", "strong", "blur"],
+            "description": "clear: transparent. glass: frosted panel. strong: more opaque glass for menus and inputs. blur: backdrop blur only."
+          },
+          "selectors": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "required": { "type": "boolean", "description": "Report the skin as broken when nothing matches." }
+        },
+        "additionalProperties": false
+      }
+    },
+    "stylesheet": { "type": "string", "description": "Extra CSS file next to this one. Prefix every rule with html.diorama-on." },
+    "status": { "enum": ["draft", "unverified", "verified"] },
+    "verified": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "app": { "type": "string" },
+          "version": { "type": "string" },
+          "date": { "type": "string" }
+        }
+      }
+    }
+  }
+}

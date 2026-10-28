@@ -1,0 +1,24 @@
+name: A skin needs fixing
+description: The theme loads but parts of an app stay opaque, or a panel looks broken.
+labels: [skin]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App and version
+      placeholder: Codex 26.1021, chatgpt.com
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Report and inspector output
+      description: "Run `diorama launch <app> --report --inspect` (or use Find what still hides the background in the browser extension) and paste the output."
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Optional. Check it doesn't show anything private.

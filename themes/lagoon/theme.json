@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "id": "lagoon",
+  "name": "Honu Lagoon",
+  "version": "1.0.0",
+  "tagline": "ASCII lagoon",
+  "description": "Sea turtles paddle through a bright lagoon, past coral, fish and rising bubbles, drawn as coloured ASCII tiles.",
+  "author": "diorama contributors",
+  "license": "MIT",
+  "scheme": "light",
+  "scene": "scene.js",
+  "fps": 30,
+  "resolution": 1,
+  "palette": {
+    "light": {
+      "base": "#a9e6ee",
+      "glass": "rgb(255 255 255 / 0.5)",
+      "glassStrong": "rgb(255 255 255 / 0.8)",
+      "blur": "14px",
+      "scrim": "transparent",
+      "accent": "#127b6f"
+    },
+    "dark": {
+      "base": "#082f39",
+      "glass": "rgb(6 30 38 / 0.55)",
+      "glassStrong": "rgb(6 30 38 / 0.84)",
+      "blur": "14px",
+      "scrim": "transparent",
+      "accent": "#4fd1c5"
+    }
+  },
+  "options": {
+    "mark": "ascii",
+    "turtles": 3,
+    "fish": 12,
+    "bubbles": 14,
+    "speed": 1
+  },
+  "terminal": {
+    "windowsTerminal": "terminal/windows-terminal.hlsl",
+    "ghostty": "terminal/ghostty.glsl"
+  }
+}

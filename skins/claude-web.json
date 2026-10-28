@@ -1,0 +1,31 @@
+{
+  "$schema": "../schemas/skin.schema.json",
+  "id": "claude-web",
+  "name": "claude.ai",
+  "description": "claude.ai, through its design-system surface tokens (--cds-surface-*). Checked against the signed-out pages only; the signed-in chat view still needs verifying.",
+  "match": {
+    "urls": ["https://claude.ai/*"]
+  },
+  "scheme": {
+    "dark": ["html[data-mode=\"dark\"]"],
+    "light": ["html[data-mode=\"light\"]"]
+  },
+  "vars": {
+    "scope": [":root"],
+    "values": {
+      "--cds-surface-0": "transparent",
+      "--cds-surface-1": "transparent",
+      "--cds-surface-2": "var(--diorama-glass)",
+      "--cds-surface-3": "var(--diorama-glass)",
+      "--cds-surface-panel": "var(--diorama-glass)",
+      "--cds-surface-popover": "var(--diorama-glass-strong)"
+    }
+  },
+  "slots": [
+    { "name": "app", "role": "clear", "selectors": ["[data-boot-surface]"] },
+    { "name": "cards", "role": "blur", "selectors": [".bg-surface-2", ".bg-surface-3", ".bg-surface-panel"] },
+    { "name": "popovers", "role": "blur", "selectors": [".bg-surface-popover"] }
+  ],
+  "status": "unverified",
+  "verified": [{ "app": "claude.ai (signed out)", "date": "2026-10-28" }]
+}

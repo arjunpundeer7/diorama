@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "id": "drift",
+  "name": "Drift",
+  "version": "1.0.0",
+  "tagline": "soft colour fields",
+  "description": "Three soft colour fields drifting behind frosted glass. Quiet, and the smallest scene to learn from.",
+  "author": "diorama contributors",
+  "license": "MIT",
+  "scheme": "light",
+  "scene": "scene.js",
+  "fps": 30,
+  "resolution": 0.5,
+  "palette": {
+    "light": {
+      "base": "#e4f1f4",
+      "glass": "rgb(255 255 255 / 0.55)",
+      "glassStrong": "rgb(255 255 255 / 0.82)",
+      "scrim": "rgb(255 255 255 / 0.10)",
+      "accent": "#11808a"
+    },
+    "dark": {
+      "base": "#0a1317",
+      "glass": "rgb(12 20 26 / 0.55)",
+      "glassStrong": "rgb(12 20 26 / 0.85)",
+      "scrim": "rgb(0 0 0 / 0.15)",
+      "accent": "#4fd1c5"
+    }
+  },
+  "options": {
+    "colors": {
+      "light": [
+        "#86cfe6",
+        "#f4b3c6",
+        "#b5deac"
+      ],
+      "dark": [
+        "#0f5566",
+        "#5e2140",
+        "#1d5233"
+      ]
+    }
+  },
+  "terminal": {
+    "windowsTerminal": "terminal/windows-terminal.hlsl",
+    "ghostty": "terminal/ghostty.glsl"
+  }
+}

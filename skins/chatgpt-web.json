@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/skin.schema.json",
+  "id": "chatgpt-web",
+  "name": "chatgpt.com",
+  "description": "chatgpt.com. Checked against the signed-out page only; the signed-in chat view still needs verifying.",
+  "match": {
+    "urls": ["https://chatgpt.com/*"]
+  },
+  "slots": [
+    { "name": "app", "role": "clear", "required": true, "selectors": ["[data-testid=\"ds-document-layout\"]", "main"] },
+    { "name": "sidebar", "role": "glass", "selectors": ["aside#ds-sidebar"] },
+    { "name": "sidebar-cards", "role": "clear", "selectors": ["aside#ds-sidebar section"] }
+  ],
+  "status": "unverified",
+  "verified": [{ "app": "chatgpt.com (signed out)", "date": "2026-10-28" }]
+}

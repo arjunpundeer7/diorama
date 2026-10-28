@@ -1,0 +1,25 @@
+{
+  "id": "preview",
+  "name": "Preview app",
+  "match": {
+    "urls": ["http://127.0.0.1:*"]
+  },
+  "scheme": {
+    "dark": ["html[data-scheme=\"dark\"]"],
+    "light": ["html[data-scheme=\"light\"]"]
+  },
+  "vars": {
+    "scope": [":root"],
+    "values": {
+      "--surface": "transparent",
+      "--panel": "var(--diorama-glass)",
+      "--raised": "var(--diorama-glass-strong)"
+    }
+  },
+  "slots": [
+    { "name": "app", "role": "clear", "required": true, "selectors": [".app"] },
+    { "name": "bar", "role": "blur", "selectors": [".bar"] },
+    { "name": "sidebar", "role": "blur", "required": true, "selectors": [".sidebar"] },
+    { "name": "raised", "role": "blur", "selectors": [".msg.user", ".card", ".composer"] }
+  ]
+}

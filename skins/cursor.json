@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/skin.schema.json",
+  "id": "cursor",
+  "name": "Cursor",
+  "description": "Cursor's workbench: the VS Code skin plus Cursor's own panes.",
+  "extends": "vscode",
+  "match": {
+    "urls": ["vscode-file://vscode-app/*/workbench.html*"]
+  },
+  "slots": [
+    { "name": "agents-sidebar", "role": "glass", "selectors": [".monaco-workbench .part.unifiedsidebar"] },
+    { "name": "tab-strip", "role": "clear", "selectors": [".monaco-workbench .part.editor .title.tabs"] }
+  ],
+  "status": "draft",
+  "verified": [{ "app": "Cursor (Windows, signed out)", "version": "3.23.12", "date": "2026-10-28" }]
+}

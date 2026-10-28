@@ -1,0 +1,76 @@
+{
+  "$schema": "../schemas/skin.schema.json",
+  "id": "vscode",
+  "name": "VS Code workbench",
+  "description": "The VS Code workbench. Cursor, Windsurf and VSCodium extend this skin.",
+  "match": {
+    "urls": ["vscode-file://vscode-app/*/workbench.html*"]
+  },
+  "scheme": {
+    "dark": [".monaco-workbench.vs-dark", ".monaco-workbench.hc-black"],
+    "light": [".monaco-workbench.vs", ".monaco-workbench.hc-light"]
+  },
+  "vars": {
+    "scope": [".monaco-workbench"],
+    "values": {
+      "--vscode-editor-background": "transparent",
+      "--vscode-editorGutter-background": "transparent",
+      "--vscode-editorPane-background": "transparent",
+      "--vscode-editorGroup-emptyBackground": "transparent",
+      "--vscode-editorGroupHeader-tabsBackground": "transparent",
+      "--vscode-editorGroupHeader-noTabsBackground": "transparent",
+      "--vscode-editorStickyScroll-background": "var(--diorama-glass-strong)",
+      "--vscode-breadcrumb-background": "transparent",
+      "--vscode-tab-activeBackground": "var(--diorama-glass)",
+      "--vscode-tab-unfocusedActiveBackground": "var(--diorama-glass)",
+      "--vscode-tab-inactiveBackground": "transparent",
+      "--vscode-tab-unfocusedInactiveBackground": "transparent",
+      "--vscode-sideBar-background": "transparent",
+      "--vscode-sideBarTitle-background": "transparent",
+      "--vscode-sideBarSectionHeader-background": "transparent",
+      "--vscode-sideBarStickyScroll-background": "var(--diorama-glass-strong)",
+      "--vscode-activityBar-background": "transparent",
+      "--vscode-panel-background": "transparent",
+      "--vscode-titleBar-activeBackground": "transparent",
+      "--vscode-titleBar-inactiveBackground": "transparent",
+      "--vscode-statusBar-background": "transparent",
+      "--vscode-statusBar-noFolderBackground": "transparent",
+      "--vscode-welcomePage-background": "transparent",
+      "--vscode-modernUI-shellBackground": "transparent"
+    }
+  },
+  "slots": [
+    { "name": "workbench", "role": "clear", "required": true, "selectors": [".monaco-workbench"] },
+    {
+      "name": "layout",
+      "role": "clear",
+      "required": true,
+      "selectors": [
+        ".monaco-workbench .monaco-grid-view",
+        ".monaco-workbench .part.editor > .content",
+        ".monaco-workbench .part.editor .editor-container",
+        ".monaco-workbench .part.editor .tabs-and-actions-container",
+        ".monaco-workbench .part.editor > .content .editor-group-container"
+      ]
+    },
+    { "name": "editor", "role": "glass", "required": true, "selectors": [".monaco-workbench .part.editor"] },
+    { "name": "sidebar", "role": "glass", "selectors": [".monaco-workbench .part.sidebar", ".monaco-workbench .part.auxiliarybar"] },
+    { "name": "activitybar", "role": "glass", "selectors": [".monaco-workbench .part.activitybar"] },
+    { "name": "panel", "role": "glass", "selectors": [".monaco-workbench .part.panel"] },
+    { "name": "titlebar", "role": "glass", "selectors": [".monaco-workbench .part.titlebar"] },
+    { "name": "statusbar", "role": "glass", "selectors": [".monaco-workbench .part.statusbar"] },
+    {
+      "name": "overlays",
+      "role": "strong",
+      "selectors": [
+        ".monaco-workbench .quick-input-widget",
+        ".monaco-workbench .monaco-menu-container",
+        ".monaco-workbench .notification-toast",
+        ".monaco-workbench .monaco-dialog-box",
+        ".monaco-editor .suggest-widget",
+        ".monaco-editor .monaco-hover"
+      ]
+    }
+  ],
+  "status": "draft"
+}

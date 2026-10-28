@@ -1,0 +1,91 @@
+{
+  "name": "diorama-vscode",
+  "displayName": "diorama: animated themes",
+  "description": "Animated backgrounds and frosted-glass panels for VS Code, Cursor and Windsurf.",
+  "version": "0.1.0",
+  "publisher": "arjunpundeer7",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "extensionKind": [
+    "ui"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "vscode:uninstall": "node ./uninstall.js"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "diorama.apply",
+        "title": "Apply Theme",
+        "category": "diorama"
+      },
+      {
+        "command": "diorama.restore",
+        "title": "Remove Theme",
+        "category": "diorama"
+      },
+      {
+        "command": "diorama.status",
+        "title": "Show Status",
+        "category": "diorama"
+      }
+    ],
+    "configuration": {
+      "title": "diorama",
+      "properties": {
+        "diorama.theme": {
+          "type": "string",
+          "default": "",
+          "description": "Theme to keep applied to this editor. Set by \"diorama: Apply Theme\"; empty means none."
+        },
+        "diorama.style": {
+          "type": "string",
+          "enum": [
+            "",
+            "ascii",
+            "braille",
+            "halftone",
+            "dither",
+            "mosaic",
+            "teletext"
+          ],
+          "default": "",
+          "description": "Draw the theme with a different mark style. Empty keeps the theme's own."
+        },
+        "diorama.options": {
+          "type": "object",
+          "default": {},
+          "description": "Theme options to override, e.g. { \"turtles\": 5, \"speed\": 0.6 }. See the theme's theme.json for what it accepts."
+        },
+        "diorama.fps": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 120,
+          "description": "Frame-rate cap for the animation. 0 uses the theme's own rate."
+        },
+        "diorama.reapplyAfterUpdate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Re-apply the theme on startup when an editor update has removed it."
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arjunpundeer7/diorama.git"
+  },
+  "homepage": "https://arjunpundeer7.github.io/diorama/"
+}

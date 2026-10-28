@@ -1,0 +1,11 @@
+{
+  "$schema": "../schemas/skin.schema.json",
+  "id": "windsurf",
+  "name": "Windsurf",
+  "description": "Windsurf's workbench. Uses the VS Code skin until someone verifies Windsurf's own panes.",
+  "extends": "vscode",
+  "match": {
+    "urls": ["vscode-file://vscode-app/*/workbench.html*"]
+  },
+  "status": "unverified"
+}

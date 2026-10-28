@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: node bin/diorama.js build all --out dist
+      - name: Package the browser extension
+        run: cd dist/extension && zip -qr "../diorama-extension-${GITHUB_REF_NAME}.zip" .
+      - name: Package the editor extension
+        run: cd dist/vscode && npx --yes @vscode/vsce@3 package --no-dependencies -o "../diorama-vscode-${GITHUB_REF_NAME}.vsix"
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip dist/*.vsix --title "diorama $GITHUB_REF_NAME" --notes-file .github/release-notes.md

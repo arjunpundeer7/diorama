@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "diorama theme",
+  "description": "themes/<id>/theme.json. See docs/themes.md.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "version",
+    "scene",
+    "palette"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Must match the folder name."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string",
+      "description": "A few words for cards and lists, e.g. \"ASCII lagoon\"."
+    },
+    "description": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "scheme": {
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "description": "Which colour scheme previews and screenshots use."
+    },
+    "scene": {
+      "type": "string",
+      "description": "Scene script, relative to this file. Runs in a sandboxed frame."
+    },
+    "fps": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 120,
+      "default": 30
+    },
+    "resolution": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 2,
+      "default": 1,
+      "description": "Canvas resolution relative to device pixels. 0.5 halves the work for soft scenes."
+    },
+    "palette": {
+      "type": "object",
+      "description": "Colours for the glass skin, per colour scheme. Values are CSS.",
+      "properties": {
+        "light": {
+          "$ref": "#/$defs/palette"
+        },
+        "dark": {
+          "$ref": "#/$defs/palette"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "options": {
+      "type": "object",
+      "description": "Values passed to the scene as env.options. Users override these with --set key=value.",
+      "properties": {
+        "mark": {
+          "enum": [
+            "ascii",
+            "braille",
+            "halftone",
+            "dither",
+            "mosaic",
+            "teletext"
+          ],
+          "description": "Mark style for grid scenes."
+        }
+      }
+    },
+    "terminal": {
+      "type": "object",
+      "properties": {
+        "windowsTerminal": {
+          "type": "string",
+          "description": "HLSL pixel shader for Windows Terminal."
+        },
+        "ghostty": {
+          "type": "string",
+          "description": "GLSL custom shader for Ghostty."
+        }
+      },
+      "additionalProperties": false
+    },
+    "preview": {
+      "type": "string",
+      "description": "Preview image, relative to this file."
+    }
+  },
+  "$defs": {
+    "palette": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "string",
+          "description": "Solid colour behind the canvas."
+        },
+        "glass": {
+          "type": "string",
+          "description": "Fill for glass panels."
+        },
+        "glassStrong": {
+          "type": "string",
+          "description": "Fill for menus, popovers and inputs."
+        },
+        "border": {
+          "type": "string"
+        },
+        "blur": {
+          "type": "string",
+          "description": "Backdrop blur radius, e.g. 18px."
+        },
+        "scrim": {
+          "type": "string",
+          "description": "Layer over the animation to calm it down."
+        },
+        "accent": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

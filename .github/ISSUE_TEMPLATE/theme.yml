@@ -1,0 +1,19 @@
+name: Theme idea
+description: A scene you'd like to see, or one you're building.
+labels: [theme]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The scene
+      description: What moves, the mood, light or dark, and which mark style suits it (ascii, braille, halftone, dither, mosaic, teletext).
+    validations:
+      required: true
+  - type: dropdown
+    id: building
+    attributes:
+      label: Are you building it?
+      options:
+        - Just an idea
+        - I'd like to build it
+        - I have a draft

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "diorama: animated themes for AI apps",
+  "short_name": "diorama",
+  "description": "Animated backgrounds and frosted-glass panels for claude.ai, chatgpt.com and other AI apps.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "diorama",
+    "default_popup": "popup.html"
+  },
+  "sandbox": {
+    "pages": ["renderer.html"]
+  },
+  "content_security_policy": {
+    "sandbox": "sandbox allow-scripts; default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'"
+  }
+}
